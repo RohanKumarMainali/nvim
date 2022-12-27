@@ -1,2 +1,2 @@
-require('therohan')
+require("therohan")
 vim.g.mapleader = " "

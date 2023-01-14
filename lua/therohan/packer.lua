@@ -26,6 +26,7 @@ return require("packer").startup(function(use)
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
 	use("akinsho/toggleterm.nvim")
+	use("Mofiqul/vscode.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use({
 		"VonHeikemen/lsp-zero.nvim",

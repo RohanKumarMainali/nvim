@@ -1,0 +1,11 @@
+# Basic configuration
+font:
+  size: 9.0
+  family: MonoSpace Code
+window:
+  dimensions:
+    columns: 120
+    lines: 30
+
+
+

@@ -27,9 +27,11 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 -- formatter
 
-vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format()']])
 
 
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "0"
+
+vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
+

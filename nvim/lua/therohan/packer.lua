@@ -11,19 +11,12 @@ return require("packer").startup(function(use)
         "nvim-telescope/telescope.nvim",
         tag = "0.1.0",
         defaults = {
-        file_ignore_patterns = {"^node_modules/"},
-    },
+            file_ignore_patterns = { "^node_modules/" },
+        },
         -- or                            , branch = '0.1.x',
         requires = { { "nvim-lua/plenary.nvim" } },
     })
 
-    use({
-        "rose-pine/neovim",
-        as = "rose-pine",
-        config = function()
-            vim.cmd("colorscheme rose-pine")
-        end,
-    })
     use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
     use("theprimeagen/harpoon")
     use("mbbill/undotree")
@@ -31,6 +24,8 @@ return require("packer").startup(function(use)
     use("akinsho/toggleterm.nvim")
     use("Mofiqul/vscode.nvim")
     use("jose-elias-alvarez/null-ls.nvim")
+    use('jose-elias-alvarez/nvim-lsp-ts-utils')
+    use("rebelot/kanagawa.nvim")
     use('MunifTanjim/prettier.nvim')
     use({
         "VonHeikemen/lsp-zero.nvim",
@@ -53,4 +48,40 @@ return require("packer").startup(function(use)
             { "rafamadriz/friendly-snippets" },
         },
     })
+    --theme
+    use('ful1e5/onedark.nvim')
+    --lua line
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+    -- for menu (directory tree)
+    use('scrooloose/nerdtree')
+    use('onsails/lspkind-nvim')
+    use('L3MON4D3/LuaSnip')
+    use('hrsh7th/cmp-nvim-lsp')
+    use('hrsh7th/cmp-buffer')
+    use('hrsh7th/nvim-cmp')
+    use('windwp/nvim-ts-autotag')
+    use('windwp/nvim-autopairs')
+    use('akinsho/nvim-bufferline.lua')
+    use({
+        "glepnir/lspsaga.nvim",
+        opt = true,
+        branch = "main",
+        event = "LspAttach",
+        config = function()
+            require("lspsaga").setup({})
+        end,
+        requires = {
+            { "nvim-tree/nvim-web-devicons" },
+            --Please make sure you install markdown and markdown_inline parser
+            { "nvim-treesitter/nvim-treesitter" }
+        }
+    })
+    use('lewis6991/gitsigns.nvim')
+    use('dinhhuy258/git.nvim')
+    use('jose-elias-alvarez/typescript.nvim')
+
+
 end)
